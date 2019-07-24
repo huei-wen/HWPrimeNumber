@@ -1,10 +1,10 @@
 <script src="prime.js">
 
 </script>
-<table border="1" width="100%">
-
-</table>
-<table border="1" width="100%">
+<h1 style="font-family: 'Microsoft JhengHei'; text-align: center ;border-bottom: 3px solid rgb(160, 43, 43);">1~100質數判斷
+</h1>
+<p style="color: rgb(216, 138, 138)">※質數背景為粉色。</p>
+<table border="1" width="100%" style="border:5px rgb(216, 138, 138) groove;" cellpadding="10">
     <script>
         const tableStart = 1;
         const tableEnd = 100;
@@ -15,14 +15,13 @@
         } else {
             row = parseInt((tableEnd - tableStart + 1) / col) + 1;
         }
-        let prime = getPrime(1, 100);
-        console.log(typeof prime);
+        let prime = getPrime(tableStart, tableEnd);
+
         for (let k = 0; k < row; k++) {
             document.write("<tr>")
             for (let j = tableStart; j < tableStart + col; j++) {
                 let newj = j + k * col;
                 let isPink;
-
 
                 if (prime.indexOf(newj) == -1) {
                     isPink = false;
