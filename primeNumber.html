@@ -1,0 +1,39 @@
+<script src="prime.js">
+
+</script>
+<table border="1" width="100%">
+
+</table>
+<table border="1" width="100%">
+    <script>
+        const tableStart = 1;
+        const tableEnd = 100;
+        let row;
+        const col = 10;
+        if ((tableEnd - tableStart + 1) % col == 0) {
+            row = parseInt((tableEnd - tableStart + 1) / col);
+        } else {
+            row = parseInt((tableEnd - tableStart + 1) / col) + 1;
+        }
+        let prime = getPrime(1, 100);
+        console.log(typeof prime);
+        for (let k = 0; k < row; k++) {
+            document.write("<tr>")
+            for (let j = tableStart; j < tableStart + col; j++) {
+                let newj = j + k * col;
+                let isPink;
+
+
+                if (prime.indexOf(newj) == -1) {
+                    isPink = false;
+                } else {
+                    isPink = true;
+                }
+                document.write("<td bgcolor='" + (isPink ? "pink" : "") + "'>");
+                document.write(`${newj}`);
+                document.write("</td>");
+            }
+            document.write("</tr>")
+        }
+    </script>
+</table>
